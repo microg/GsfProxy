@@ -12,7 +12,7 @@
 
     <application
         android:allowBackup="false"
-        android:label="µg GsfProxy">
+        android:label="µg Services Framework Proxy">
         <service
             android:name="org.microg.gms.gcm.PushRegisterProxy"
             android:exported="true"

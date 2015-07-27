@@ -19,30 +19,20 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.android.tools.build:gradle:1.2.3'
     }
 }
 
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile 'com.android.support:support-v4:22.2.0'
-    compile 'com.android.support:appcompat-v7:22.2.0'
+//    compile 'com.android.support:support-v4:22.2.0'
+//    compile 'com.android.support:appcompat-v7:22.2.0'
 }
 
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
-    lintOptions.abortOnError false
-
-    sourceSets {
-        main {
-            manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']
-            aidl.srcDirs = ['src']
-            res.srcDirs = ['res']
-        }
-    }
 }
 
 if (file('user.gradle').exists()) {
