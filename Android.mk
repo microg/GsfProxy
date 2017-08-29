@@ -21,7 +21,7 @@ LOCAL_PACKAGE_NAME := GsfProxy
 
 gsfproxy_root  := $(LOCAL_PATH)
 gsfproxy_dir   := services-framework-proxy
-gsfproxy_out   := $(TARGET_COMMON_OUT_ROOT)/obj/APPS/$(LOCAL_MODULE)_intermediates
+gsfproxy_out   := $(realpath $(TARGET_COMMON_OUT_ROOT))/obj/APPS/$(LOCAL_MODULE)_intermediates
 gsfproxy_build := $(gsfproxy_root)/$(gsfproxy_dir)/build
 gsfproxy_apk   := build/outputs/apk/services-framework-proxy-release-unsigned.apk
 
