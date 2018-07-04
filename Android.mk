@@ -37,6 +37,7 @@ $(gsfproxy_root)/$(gsfproxy_dir)/$(gsfproxy_apk): preps_gsf
 	cd $(gsfproxy_root)/$(gsfproxy_dir) && JAVA_TOOL_OPTIONS="$(JAVA_TOOL_OPTIONS) -Dfile.encoding=UTF8" ../gradlew assembleRelease
 
 LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SRC_FILES := $(gsfproxy_dir)/$(gsfproxy_apk)
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
