@@ -23,14 +23,17 @@ gsfproxy_root  := $(LOCAL_PATH)
 gsfproxy_dir   := services-framework-proxy
 gsfproxy_out   := $(TARGET_COMMON_OUT_ROOT)/obj/APPS/$(LOCAL_MODULE)_intermediates
 gsfproxy_build := $(gsfproxy_root)/$(gsfproxy_dir)/build
-gsfproxy_apk   := build/outputs/apk/services-framework-proxy-release-unsigned.apk
+gsfproxy_apk   := build/outputs/apk/release/services-framework-proxy-release-unsigned.apk
 
-$(gsfproxy_root)/$(gsfproxy_dir)/$(gsfproxy_apk):
-	rm -Rf $(gsfproxy_build)
-	mkdir -p $(gsfproxy_out)
-	ln -s $(gsfproxy_out) $(gsfproxy_build)
-	echo "sdk.dir=$(ANDROID_HOME)" > $(gsfproxy_root)/local.properties
-	cd $(gsfproxy_root) && git submodule update --recursive --init
+.PHONY: preps_gsf
+preps_gsf:
+	rm -rf $(gsfproxy_build); \
+	mkdir -p $(ANDROID_BUILD_TOP)/$(gsfproxy_out); \
+	ln -s $(ANDROID_BUILD_TOP)/$(gsfproxy_out)/ $(ANDROID_BUILD_TOP)/$(gsfproxy_build)
+
+$(gsfproxy_root)/$(gsfproxy_dir)/$(gsfproxy_apk): preps_gsf
+	echo "sdk.dir=$(ANDROID_HOME)" > $(gsfproxy_root)/local.properties; \
+	cd $(gsfproxy_root) && git submodule update --recursive --init; \
 	cd $(gsfproxy_root)/$(gsfproxy_dir) && JAVA_TOOL_OPTIONS="$(JAVA_TOOL_OPTIONS) -Dfile.encoding=UTF8" ../gradlew assembleRelease
 
 LOCAL_CERTIFICATE := platform

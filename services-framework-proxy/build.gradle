@@ -41,6 +41,13 @@ android {
     defaultConfig {
         versionName getMyVersionName()
         versionCode getMyVersionCode()
+        minSdkVersion androidMinSdk()
+        targetSdkVersion androidTargetSdk()
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
