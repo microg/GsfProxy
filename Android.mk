@@ -34,7 +34,7 @@ preps_gsf:
 $(gsfproxy_root)/$(gsfproxy_dir)/$(gsfproxy_apk): preps_gsf
 	echo "sdk.dir=$(ANDROID_HOME)" > $(gsfproxy_root)/local.properties; \
 	cd $(gsfproxy_root) && git submodule update --recursive --init; \
-	cd $(gsfproxy_root)/$(gsfproxy_dir) && JAVA_TOOL_OPTIONS="$(JAVA_TOOL_OPTIONS) -Dfile.encoding=UTF8" ../gradlew assembleRelease
+	cd $(gsfproxy_dir) && JAVA_TOOL_OPTIONS="$(JAVA_TOOL_OPTIONS) -Dfile.encoding=UTF8" ../gradlew assembleRelease
 
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
