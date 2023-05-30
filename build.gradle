@@ -31,9 +31,9 @@ allprojects {
     ext.isReleaseVersion = false
 }
 
-def androidCompileSdk() { return 24 }
+def androidCompileSdk() { return 33 }
 
-def androidTargetSdk() { return 24 }
+def androidTargetSdk() { return 33 }
 
 def androidMinSdk() { return 9 }
 
