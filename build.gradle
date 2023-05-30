@@ -16,17 +16,18 @@
 
 buildscript {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:8.0.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
     }
 }
 
 allprojects {
     apply plugin: 'idea'
-    ext.androidBuildVersionTools = "24.0.3"
+    ext.androidBuildVersionTools = "30.0.3"
     ext.isReleaseVersion = false
 }
 
@@ -54,12 +55,13 @@ def versionName() {
 subprojects {
     group = 'org.microg'
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
 
     tasks.withType(JavaCompile) {
-        sourceCompatibility = JavaVersion.VERSION_1_7
-        targetCompatibility = JavaVersion.VERSION_1_7
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 

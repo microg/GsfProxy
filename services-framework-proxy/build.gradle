@@ -35,6 +35,8 @@ int getMyVersionCode() {
 }
 
 android {
+    namespace 'com.google.android.gsf'
+
     compileSdkVersion androidCompileSdk()
     buildToolsVersion "$androidBuildVersionTools"
 
