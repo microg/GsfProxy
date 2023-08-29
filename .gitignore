@@ -1,8 +1,9 @@
-*.iml
-gen/
-bin/
+# SPDX-FileCopyrightText: 2015 microG Project Team
+# SPDX-License-Identifier: CC0-1.0
+
 build/
+.idea/
 .gradle/
 user.gradle
 local.properties
-.directory
+*.iml
