@@ -1,0 +1,5 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: services-framework-proxy/src/main/res/mipmap-*/*.png
+Copyright: 2015 microG Project Team
+License: CC-BY-SA-4.0
