@@ -6,4 +6,6 @@
 
 <resources>
     <string name="gsf_app_name">microG Services Framework Proxy</string>
+
+    <string name="perm_gsf_read_gservices_label">read Google service configuration</string>
 </resources>

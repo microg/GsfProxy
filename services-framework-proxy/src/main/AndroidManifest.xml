@@ -5,6 +5,12 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <permission
+        android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"
+        android:label="@string/perm_gsf_read_gservices_label"
+        android:permissionGroup="android.permission-group.ACCOUNTS"
+        android:protectionLevel="normal" />
+
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
     <uses-permission android:name="com.google.android.c2dm.permission.SEND"/>
 
